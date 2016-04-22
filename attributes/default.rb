@@ -41,7 +41,7 @@ when 'debian'
   default['nginx']['user']       = 'www-data'
   default['nginx']['init_style'] = 'runit'
   if platform == 'ubuntu' && platform_version == '14.04'
-    default['nginx']['pid'] = '/run/nginx.pid'
+    default['nginx']['pid'] = '/var/run/nginx.pid'
   end
 when 'rhel', 'fedora'
   default['nginx']['user']        = 'nginx'
