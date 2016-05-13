@@ -44,6 +44,12 @@ package node['nginx']['package_name'] do
   not_if 'which nginx'
 end
 
+node['nginx']['modules'].keys.each do |pkg|
+  package pkg do
+    notifies :reload, 'ohai[reload_nginx]', :delayed
+  end
+end
+
 service 'nginx' do
   supports :status => true, :restart => true, :reload => true
   action   :enable

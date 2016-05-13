@@ -129,3 +129,8 @@ default['nginx']['large_client_header_buffers'] = nil
 default['nginx']['default']['modules']          = []
 
 default['nginx']['extra_configs'] = {}
+
+default['nginx']['modules'] = {
+  'nginx-module-geoip' => 'modules/ngx_http_geoip_module.so',
+  'nginx-module-image-filter' => 'modules/ngx_http_image_filter_module.so'
+}
