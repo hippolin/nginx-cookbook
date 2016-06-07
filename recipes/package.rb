@@ -55,4 +55,8 @@ service 'nginx' do
   action   :enable
 end
 
+file "#{node['nginx']['dir']}/conf.d/default.conf" do
+  action :delete
+end
+
 include_recipe 'nginx::commons'
