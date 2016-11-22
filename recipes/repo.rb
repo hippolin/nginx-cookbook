@@ -36,6 +36,6 @@ when 'debian'
     distribution node['lsb']['codename']
     components   %w(nginx)
     deb_src      true
-    key          'http://nginx.org/keys/nginx_signing.key'
+    key          'https://nginx.org/keys/nginx_signing.key'
   end
 end
