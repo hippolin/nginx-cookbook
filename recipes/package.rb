@@ -46,7 +46,8 @@ end
 
 node['nginx']['modules'].keys.each do |pkg|
   package pkg do
-    notifies :reload, 'ohai[reload_nginx]', :delayed
+    notifies :reload, 'ohai[reload_nginx]', :immediately
+    not_if 'which nginx'
   end
 end
 
