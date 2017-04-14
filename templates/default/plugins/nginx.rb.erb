@@ -57,7 +57,8 @@ Ohai.plugin(:Nginx) do
           nginx[:prefix] = prefix
           nginx[:conf_path] = conf_path
         when /^nginx version: nginx\/(\d+\.\d+\.\d+)/
-        nginx[:version] = $1
+          nginx[:version] = $1
+        end
       end
     end
   end

@@ -41,13 +41,12 @@ end
 package node['nginx']['package_name'] do
   options package_install_opts
   notifies :reload, 'ohai[reload_nginx]', :immediately
-  not_if 'which nginx'
 end
 
 node['nginx']['modules'].keys.each do |pkg|
   package pkg do
-    notifies :reload, 'ohai[reload_nginx]', :immediately
-    not_if 'which nginx'
+    action :install
+    notifies :reload, 'service[nginx]', :delayed
   end
 end
 
