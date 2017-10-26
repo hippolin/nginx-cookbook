@@ -21,7 +21,7 @@
 
 include_recipe "nginx::#{node['nginx']['install_method']}"
 
-service 'nginx' do
+resources('service[nginx]') do
   supports :status => true, :restart => true, :reload => true
   action   :start
 end

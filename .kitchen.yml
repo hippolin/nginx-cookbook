@@ -13,7 +13,9 @@ platforms:
   - name: ubuntu-12.04
     run_list:
         - recipe[apt]
-
+  - name: ubuntu-16.04
+    run_list:
+        - recipe[apt]
 suites:
   - name: default
     run_list:
